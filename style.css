@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+}
+  body {
+    height: 100vh;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  
+  }
+  body{
+    background: linear-gradient(-40deg, #f8e1ff, #d3f8ff, #fff9d0, #e0ffe7);
+    background-size: 300% 400%;
+    animation: gradientMove 7s ease infinite;
+    color: #000;
+  }
+h1{
+    background-color: #081b31;
+    color: #fff;
+    height: 5 rem;
+    text-align: center;
+    line-height: 5 rem;
+}
+
+.music-toggle{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+.music-btn{
+    background-color: whitesmoke;
+    color:darkblue;
+}
+.choice{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.choice:hover{
+    cursor: pointer;
+    background-color: #081b31;
+}
+img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3 rem;
+    margin-top: 5rem;
+}
+.score-board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 3rem;
+    gap: 5rem;
+}
+#user-score,#comp-score{
+    font-size: 4rem;
+}
+.msg-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+#msg{
+    font-size: 1.8rem;
+    display: inline;
+    background-color: #081b31;
+    color: #fff;
+    padding: 0.9rem;
+    border-radius: 1rem;
+}
+/* Round info and progress bar*/
+.round-info{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2;
+}
+.progess-bar{
+    height: 15px;
+    width: 30px;
+    border-radius: 4px;
+    background-color: lightgray;
+    transition: background-color 0.3s;
+}
+.progress-user.active{
+    background-color: green;
+}
+.progress-comp.active{
+    background-color: red;
+}
+#final-result{
+    display: none;
+}
+#final-result.show{
+    display: block;
+    font-size: 1.7rem;
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 12px;
+    background-color: #e0f7fa;
+    color: #00796b;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+/* reset button */
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+#reset-btn{
+    padding: 5px 20px;
+    font-size: 14px;
+    background-color: #dff01d;
+    color: black;
+    border: blue;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3 ease;
+    
+}
+#reset-btn.hover{
+    background-color: #c1e715;
+}
+#reset-btn.hidden{
+    display: none;
+}

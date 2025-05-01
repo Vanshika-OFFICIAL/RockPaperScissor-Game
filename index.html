@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Heading of Game -->
+    <h1>Rock Paper Scissor</h1>
+    <!--Audio Player (HIDDEN)-->
+    <audio id="bg-music" src="Thirsty Horse instrumental audio.mp3" type="audio/mpeg">
+
+    </audio>
+    <!-- Music toggle button -->
+     <div class="music-toggle">
+        <button id="music-btn"><i class="fa-solid fa-volume-xmark"></i> Music Off</button>
+     </div>
+    
+     <!-- Hand Sign's of Rock Paper Scissor -->
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="/images/rock .jpg">
+        </div>
+        <div class="choice" id="paper">
+            <img src="/images/paper.jpg">
+        </div>
+
+        <div class="choice" id="scissor">
+            <img src="/images/scissor.jpg">
+        </div>
+    </div>
+    <!-- Score Board -->
+    <div class="score-board">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>You</p>
+        </div>
+        <div class="score">
+            <p id="comp-score">0</p>
+            <p>Comp</p>
+        </div>
+    </div>
+    <!--Round Info-->
+    <div class="round-info">
+        <p id="round-number"> Round:0/5 </p>
+        <div class="progress-bar">
+            <div id="user-progress" class="progress-user"> </div>
+            <div id="comp-progress" class="progress-comp"></div>
+         </div>
+
+    </div>
+    <!-- Play Button -->
+    <div class="msg-container">
+        <p id="msg">Play your move</p>
+    </div>
+   <div class="button-container">
+    <button id="reset-btn" class="hidden">Play Again</button>
+   </div>
+    <p id="final-result"></p>
+    <script src="app.js"></script>
+</body>
+</html>
