@@ -37,30 +37,40 @@ h1{
     background-color: whitesmoke;
     color:darkblue;
 }
-.choice{
+ .choice {
     height: 170px;
     width: 170px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    transition: all 0.3s ease;
 }
-.choice:hover{
+
+.choice:hover {
     cursor: pointer;
     background-color: #081b31;
+    box-shadow: 0 0 15px rgba(8, 27, 49, 0.4);
+    transform: scale(1.05);
 }
-img{
-    height: 150px;
-    width: 150px;
+
+.choice:active {
+    background-color: rgba(8, 27, 49, 0.8);
+    box-shadow: 0 0 10px rgba(8, 27, 49, 0.5);
+    transform: scale(0.95);
+}
+.choice img{
+    width: 92%;
+    height: 92%;
     object-fit: cover;
     border-radius: 50%;
 }
+
 .choices{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3 rem;
+    gap: 3rem;
     margin-top: 5rem;
 }
 .score-board{
@@ -93,7 +103,7 @@ img{
     margin-top: 2rem;
     font-size: 1.2;
 }
-.progess-bar{
+.progress-bar{
     height: 15px;
     width: 30px;
     border-radius: 4px;
@@ -145,4 +155,18 @@ img{
 }
 #reset-btn.hidden{
     display: none;
+}
+/* mobile friendly */
+@media screen and (max-width:600px){
+    .choice{
+        width: 120px;
+        height: 120px;
+    }
+}
+/* Mobile(Landscape) */
+@media screen and (max-height:500px){
+    .choice{
+        width: 100px;
+        height: 100px;
+    }
 }
