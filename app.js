@@ -16,6 +16,8 @@ const loseSound=new Audio("playful-failure-310480.mp3");
 loseSound.load();//preload the sound
 const resetBtn=document.getElementById("reset-btn");
 const finalResultDisplay=document.getElementById("final-result");
+const startText=document.getElementById("start-text");
+const countDownMusic=document.getElementById('countdown-music');
 
 const genCompChoice =()=>{
     const options=["rock","paper","scissor"];
@@ -161,4 +163,54 @@ const resetGame= () =>{
 resetBtn.addEventListener("click",()=>{
     resetGame();
     resetBtn.classList.add("hidden");//hide again after resetting
-})
+    animateStart();
+});
+
+//animation 
+function animateStart(callback){
+    const startScreen=document.getElementById("start-animation");
+     //countdown
+    let countDown=["Get Ready... ","3","2","1","Go!"];
+    let i=0;
+
+    //clear old leftover text
+    startText.innerText="";
+    //disable user interaction during animation
+    choices.forEach(choice=>{
+        choice.style.pointerEvents='none';
+    });
+    //show start screen
+    startScreen.style.display='flex';
+    startText.style.display='block';
+
+    const interval=setInterval(()=>{
+        startText.innerText=countDown[i];
+        i++;
+        if(i>=countDown.length){
+            clearInterval(interval);
+
+            setTimeout(() => {
+                //fade out 
+                startScreen.style.transition='opacity 0.5s ease';
+                startScreen.style.opacity='0';
+
+                //remove from view after fade
+                setTimeout(() => {
+                    startScreen.style.display='none';
+                    startScreen.style.opacity='1';
+                    startText.style.display='none';
+                    startText.innerText="";
+
+                    //re-enable user interaction
+                    choices.forEach(choice=>{
+                        choice.style.pointerEvents='auto';
+                    });
+                    if (callback) callback();
+                }, 500);
+            }, 800);
+        }
+    },1000);
+}
+window.onload=()=>{
+    animateStart();
+}
