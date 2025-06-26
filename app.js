@@ -64,6 +64,9 @@ const playGame=(userChoice)=>{
     //Generate computer choice
     const compChoice=genCompChoice();
 
+    // call flash for comp choice
+    highlightCompChoice(compChoice);
+
     if(userChoice===compChoice){
         //DRAW GAME
         drawGame();
@@ -213,4 +216,15 @@ function animateStart(callback){
 }
 window.onload=()=>{
     animateStart();
+}
+
+function highlightCompChoice(choice){
+    const compElem=document.getElementById(choice);
+    if(!compElem) return;
+    compElem.classList.add("comp-flash");
+
+    //remove it after animation completes(600ms);
+    setTimeout(() => {
+        compElem.classList.remove("comp-flash");
+    }, 600);
 }
